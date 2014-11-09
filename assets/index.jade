@@ -1,0 +1,35 @@
+doctype html
+html
+
+head
+  title StaticStrap
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width,initial-scale=1.0')
+  link(rel='stylesheet', href='./application.css')
+
+body
+  .site-wrapper
+    .site-wrapper-inner
+      .cover-container
+        .masthead.clearfix
+          .inner
+            h3.masthead-brand StaticStrap
+            ul.nav.masthead-nav
+              li.active: a(href='#') Home
+              li: a(href='#') Features
+              li: a(href='#') Contact
+
+        .inner.cover
+          h1.cover-heading Strap your page.
+          p.lead StaticStrap is a web page builder.
+          p.lead: a.btn.btn-lg.btn-default(href='http://github.com/geta6/staticstrap') Learn more
+
+        .mastfoot
+          .inner
+            p <a href="http://github.com/geta6/staticstrap">StaticStrap</a> by <a href="https://twitter.com/geta6">@geta6</a>.
+
+  if process.env.NODE_ENV == 'production'
+    script#script(src='./application.js')
+  else
+    script#script(data-main='./config.js', src='./vendor/requirejs/require.js')
